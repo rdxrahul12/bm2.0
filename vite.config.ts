@@ -3,18 +3,18 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 // https://vitejs.dev/config/
-base: mode === "production" ? "/bm2.0/" : "/",
+export default defineConfig(({ mode }) => ({
   server: {
-  host: "::",
+    host: "::",
     port: 8080,
-      hmr: {
-    overlay: false,
+    hmr: {
+      overlay: false,
     },
-},
-plugins: [react()],
+  },
+  plugins: [react()],
   resolve: {
-  alias: {
-    "@": path.resolve(__dirname, "./src"),
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
     },
-},
+  },
 }));
