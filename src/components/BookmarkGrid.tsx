@@ -1,0 +1,49 @@
+import { AnimatePresence } from "framer-motion";
+import { Bookmark, Category } from "@/types/bookmark";
+import { BookmarkCard } from "./BookmarkCard";
+
+interface BookmarkGridProps {
+  bookmarks: Bookmark[];
+  categories: Category[];
+  onEdit: (bookmark: Bookmark) => void;
+  onDelete: (id: string) => void;
+  onTogglePin: (id: string) => void;
+}
+
+export function BookmarkGrid({
+  bookmarks,
+  categories,
+  onEdit,
+  onDelete,
+  onTogglePin,
+}: BookmarkGridProps) {
+  const getCategoryById = (id: string) => categories.find((c) => c.id === id);
+
+  if (bookmarks.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center py-20 text-muted-foreground">
+        <div className="text-6xl mb-4">📚</div>
+        <p className="text-lg font-medium">No bookmarks yet</p>
+        <p className="text-sm">Add your first bookmark to get started!</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+      <AnimatePresence mode="popLayout">
+        {bookmarks.map((bookmark, index) => (
+          <BookmarkCard
+            key={bookmark.id}
+            bookmark={bookmark}
+            category={getCategoryById(bookmark.category)}
+            onEdit={onEdit}
+            onDelete={onDelete}
+            onTogglePin={onTogglePin}
+            index={index}
+          />
+        ))}
+      </AnimatePresence>
+    </div>
+  );
+}

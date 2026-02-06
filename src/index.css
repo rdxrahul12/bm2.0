@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Neumorphic Design System - All colors in HSL */
+
+@layer base {
+  :root {
+    /* Light Theme - Clean White */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 99%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 99%;
+    --popover-foreground: 0 0% 0%;
+
+    /* Netflix Red #E50914 -> ~ 357 92% 47% */
+    --primary: 357 92% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 357 92% 47%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Deep Pitch Black - No other shades */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 5% 6%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 5% 6%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Netflix Red */
+    --primary: 357 92% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 5% 9%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 0%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 0% 0%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders must be visible to distinguish elements in pitch black */
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 357 92% 47%;
+
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 357 92% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 0%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 357 92% 47%;
+
+    /* Remove neumorphic shadows in dark mode for flat look */
+    --shadow-light: 0 0% 0%;
+    --shadow-dark: 0 0% 0%;
+    --neu-shadow: none;
+    --neu-shadow-sm: none;
+    --neu-shadow-inset: none;
+    --neu-shadow-pressed: none;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+
+  /* Neumorphic utility classes */
+  .neu-raised {
+    box-shadow: var(--neu-shadow), 0 0 25px -5px hsl(var(--primary) / 0.9);
+  }
+
+  .neu-raised-sm {
+    box-shadow: var(--neu-shadow-sm), 0 0 15px -3px hsl(var(--primary) / 0.9);
+  }
+
+  .neu-inset {
+    box-shadow: var(--neu-shadow-inset);
+  }
+
+  .neu-pressed {
+    box-shadow: var(--neu-shadow-pressed);
+  }
+
+  /* Gradient text utility */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-destructive bg-clip-text text-transparent;
+  }
+
+  /* Glow effect for active states */
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+  }
+}
