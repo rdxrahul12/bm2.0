@@ -1,4 +1,5 @@
 # 🚀 Bookmark Manager by  R D x
+<img width="1891" height="1069" alt="Screenshot 2026-02-23 225323" src="https://github.com/user-attachments/assets/1e6da136-abd0-4c60-99b4-6e8fb172e1c5" />
 
 Hey there! Thanks for checking out **Bookmark Delight**. This is a modern, speedy, and beautiful way to manage your bookmarks right inside your browser. 
 
