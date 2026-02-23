@@ -26,26 +26,17 @@ To get the full experience—including the ability to open the dash on every new
 
 Here is the exact step-by-step process:
 
-### Step A: Download the Code
-1. Scroll to the top of this GitHub page.
-2. Click the green **"<> Code"** button.
-3. Click **"Download ZIP"**.
-4. Once it downloads, **Extract** (unzip) the folder somewhere on your computer (like your Desktop or Documents folder). Let's say you extracted it to `bookmark-delight-main`.
+### Step A: Download the Extension
+1. Scroll to the top of this GitHub page (or head to the Releases section).
+2. Download the **`bookmark-delight-extension.zip`** file.
+3. Once it downloads, **Extract** (unzip) the file somewhere safe on your computer (like your Documents folder). You will end up with a folder containing the extension files.
 
-### Step B: Build the Extension
-*Disclaimer: You'll need [Node.js](https://nodejs.org/) installed on your computer for this part.*
-1. Open up your computer's terminal (Command Prompt on Windows, Terminal on Mac).
-2. Type `cd ` (with a space) and then drag your unzipped `bookmark-delight-main` folder into the terminal, then press **Enter**. This puts you inside the project folder.
-3. Type `npm install` and press **Enter**. Wait a minute for it to download the necessary pieces.
-4. Type `npm run build` and press **Enter**. 
-   > 🎉 **Success!** This will create a new folder called `dist` inside your project directory. This `dist` folder is your shiny new extension!
-
-### Step C: Load it into Chrome
+### Step B: Load it into Chrome
 1. Open Google Chrome.
 2. In the URL bar at the top, type `chrome://extensions/` and hit **Enter**.
 3. Look at the top right corner of the page and turn **ON** the switch that says **"Developer mode"**.
 4. Now, look at the top left and click the button that says **"Load unpacked"**.
-5. A file browser will pop up. Navigate to the `bookmark-delight-main` folder, select the new **`dist`** folder inside it, and click Select Folder.
+5. A file browser will pop up. Navigate to the extracted folder you created in Step A, select it, and click **Select Folder**.
 
 **That's it!** 🎉 
 Bookmark Delight is now installed. Open a new tab in Chrome, and you should immediately be greeted by your beautiful new bookmark manager. Enjoy!
